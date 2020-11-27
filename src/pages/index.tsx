@@ -45,10 +45,12 @@ const Index = () => (
                     </LoginButton>
                 </Link>
                 
-                <RegisterButton>
-                    Registrar
-                    <RegisterIcon />
-                </RegisterButton>
+                <Link href="/register">
+                    <RegisterButton>
+                        Registrar
+                        <RegisterIcon />
+                    </RegisterButton>
+                </Link>
             </Controllers>
         </Main>
         

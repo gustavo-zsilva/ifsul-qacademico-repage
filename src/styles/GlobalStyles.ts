@@ -15,7 +15,21 @@ export default createGlobalStyle`
     }
 
     body {
-        height: 100vh;
+        height: 100%;
         background-color: var(--bg-color);
+    }
+
+    @keyframes pop {
+        from {
+            opacity: 0%;
+            transform: scale(0.9);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        to {
+            opacity: 100%;
+            transform: scale(1);
+        }
     }
 `;

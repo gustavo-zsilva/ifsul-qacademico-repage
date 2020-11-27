@@ -1,0 +1,23 @@
+[
+    { "title": "Questionários", "description": "Questionários a serem respondidos", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/1940/1940301.svg", "url": "questionnaire" },
+    { "title": "Horário Individual", "description": "Confira aqui o horário de suas aulas neste período", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/594/594354.svg", "url": "individual_schedule" },
+    { "title": "Calendário Acadêmico", "description": "Todas as datas do que acontece na sua instituição, no seu curso e na sua turma estão disponíveis para visualização em um único calendário.", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/2370/2370264.svg", "url": "academic_calendar" },
+    { "title": "Diários", "description": "Datas de provas, trabalhos e exercícios de cada disciplina", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/3113/3113201.svg", "url": "diaries" },
+    { "title": "Boletim", "description": "Confira notas e freqüências", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/3402/3402148.svg", "url": "report_card" },
+    { "title": "Estágios", "description": "Verifique se há ofertas de estágios para o seu curso", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/1945/1945648.svg", "url": "internships" },
+    { "title": "Caixa de Mensagens", "description": "Você possui mensagens não lidas.", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/561/561127.svg", "url": "mailbox" },
+    { "title": "Histórico Escolar", "description": "Histórico Escolar", "iconSrc": "default", "url": "school_records" },
+    { "title": "Medidas disciplinares e premiações", "description": "Medidas disciplinares e premiações", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/1378/1378526.svg", "url": "discipline_prizes" },
+    { "title": "Matrizes Curriculares", "description": "Consulte as Matrizes Curriculares", "iconSrc": "default", "url": "curricular_matrices" },
+    { "title": "Pedido de Alteração de Dados Cadastrais", "description": "Há erros em seu Cadastro de Aluno? Alguns dados mudaram, como seu telefone ou endereço? Envie uma solicitação de alteração.", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/339/339853.svg", "url": "registration_data_change" },
+    { "title": "FAQs", "description": "Consulte as perguntas mais frequentes enviadas a seus professores, ou envie uma pergunta", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/942/942802.svg", "url": "faq" },
+    { "title": "Material de aula", "description": "Consulte Material para Download", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/588/588464.svg", "url": "class_supplies" },
+    { "title": "Alterar Senha", "description": "Altere sua senha periodicamente", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/846/846099.svg", "url": "change_password" },
+    { "title": "Currículo Pessoal", "description": "Mantenha seu currículo atualizado", "iconSrc": "default", "url": "personal_curriculum" },
+    { "title": "Solicitar Documentos", "description": "Solicite históricos e declarações", "iconSrc": "https://www.flaticon.com/svg/static/icons/svg/2541/2541979.svg", "url": "request_documents" },
+    { "title": "Comprovante de renovação de matrícula", "description": "Imprima o comprovante de renovação de matrícula mais recente.", "iconSrc": "default", "url": "registration_renewal_proof" },
+    { "title": "Eventos", "description": "Veja os eventos promovidos pela instituição.", "iconSrc": "default", "url": "events" },
+    { "title": "Gerenciar atividades complementares", "description": "Gerenciar atividades complementares.", "iconSrc": "default", "url": "activities" },
+    { "title": "Inscrição em Estágio Curricular", "description": "Inscrição em Estágio Curricular", "iconSrc": "default", "url": "internship_enrollment" },
+    { "title": "Senha dos Pais ou Responsável", "description": "Envia a senha dos pais ou responsável pelo aluno por email.", "iconSrc": "default", "url": "request_passwords" }
+]

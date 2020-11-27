@@ -1,97 +1,118 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 
-import { Container, LoginButton, LoginTilt } from '../styles/pages/Login';
-import Warning from '../components/utils/Warning';
+import { LoginButton } from '../styles/pages/Login';
+
+import FormLayout from '../components/FormLayout';
 
 import Select from 'react-select';
 
-import GlobalStyle from '../styles/GlobalStyles';
-
-import Tilt from 'react-tilt';
 import Image from 'next/image';
-import Head from 'next/head';
 
+
+const OptionImage = ({ src }) => <Image src={src} width="30px" height="auto" />;
 
 const Login: React.FC = () => {
 
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const [isInputDisabled, setIsInputDisabled] = useState(false);
 
     const [warning, setWarning] = useState(false);
 
-    const options = [
-        { label: 'React', value: 'react' }
-    ]
+    const [selectedValue, setSelectedValue] = useState('');
 
-    const tiltOptions = {
-        reverse: true,
-        max: 35,
-        glare: true,
-        maxGlare: 1,
-        perspective: 1000,
-        easing: "cubic-bezier(.03,.98,.52,.99)",
-        scale: 1,
-        speed: 300,
-        transition: true,
-        axis: null,
-        reset: true
-    }
+    const options = [
+        { label: 'Estudante', value: 'student', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/948/948256.svg"/> },
+        { label: 'Professor', value: 'teacher', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/860/860620.svg"/> },
+        { label: 'Classificado', value: 'classified', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/2922/2922518.svg"/> },
+        { label: 'Pais de Aluno', value: 'parents', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/2829/2829916.svg"/> },
+        { label: 'Empresa', value: 'company', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/993/993891.svg"/> },
+        { label: 'Téc. Administrativo', value: 'administrative_technician', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/1995/1995414.svg"/> },
+        { label: 'Validar Documento', value: 'validate_document', icon: <OptionImage src="https://www.flaticon.com/svg/static/icons/svg/2912/2912760.svg"/> }
+    ]
 
     const submitForm = (event: FormEvent) => {
         event.preventDefault();
 
-        if (!login || !password) {
+        if (selectedValue === 'validate_document') {
+            return;
+        }
+
+        if (!login || !password || !selectedValue) {
             setWarning(true);
 
             setTimeout(() => {
                 setWarning(false);
             }, 3000)
+
+            return;
         }
 
-        setLogin('')
-        setPassword('')
+        setLogin('');
+        setPassword('');
+
+        window.location.href = 'http://localhost:3000/qacademico/home';
     }
 
-    return (
-        <Container>
+    useEffect(() => {
+        if (selectedValue === 'validate_document') {
+            return setIsInputDisabled(true);
+        }
+
+        setIsInputDisabled(false);
+    }, [selectedValue])
 
 
-            <Head>
-                <title>Q-Acadêmico - Login</title>
-            </Head>
-
-            <Tilt options={tiltOptions}>
-                <LoginTilt>
-                    <Image src="/assets/password.svg" width="200px" height="auto" />
-                </LoginTilt>
-            </Tilt>
-          
-            <div>
-
-                {warning && <Warning isRed={true}/>}
-
-                <form onSubmit={submitForm}>
-                    <h2>Login</h2>
-                
-                    <label htmlFor="role-select">Selecione seu cargo <span>(ex: Estudante)</span> : </label>
-                    <div id="role-select">
-                        <Select options={options} className="react-select-container" classNamePrefix="react-select" />
-                    </div>
-
-                    <label htmlFor="login">Login</label>
-                    <input type="text" id="login" value={login} onChange={e => setLogin(e.target.value)} />
- 
-                    <label htmlFor="password">Senha</label>
-                    <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
-
-                    <LoginButton>
-                        Entrar
-                    </LoginButton>
-                </form>
+    // React-Select way to add icons to options
+    const customSingleValue = ({ data }) => (
+        <div className="input-select">
+            <div className="input-select__single-value">
+                { data.icon && <span className="input-select__icon">{ data.icon }</span> }
+                <span>{ data.label }</span>
             </div>
+        </div>
+    );
 
-            <GlobalStyle />
-        </Container>
+
+    return (
+        <FormLayout pageTitle="Login" heroSrc="/assets/password.svg" warning={warning}>
+            <form onSubmit={submitForm}>
+                <h2>Login</h2>
+        
+                <label htmlFor="role-select">Selecione seu cargo <span>(ex: Estudante)</span> : </label>
+                <div id="role-select">
+                    <Select
+                        options={options}
+                        className="react-select-container"
+                        classNamePrefix="react-select"
+                        components={ {SingleValue: customSingleValue} }
+                        onChange={e => setSelectedValue(e.value)}
+                    />
+                </div>
+
+                <label htmlFor="login">Login</label>
+                <input
+                    type="text"
+                    id="login"
+                    value={login}
+                    onChange={e => setLogin(e.target.value)}
+                    disabled={isInputDisabled}
+                />
+
+                <label htmlFor="password">Senha</label>
+                <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    disabled={isInputDisabled}
+                />
+
+                <LoginButton>
+                    Entrar
+                </LoginButton>
+            </form>
+        </FormLayout>
     )
 }
 
