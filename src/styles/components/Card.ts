@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-color: white;
+    background-color: rgba(128, 128, 128, 0.050);
     padding: 1rem;
     border-radius: .2rem;
 
-    border: 1px solid black;
+    border: 1px solid gray;
 
     display: flex;
 

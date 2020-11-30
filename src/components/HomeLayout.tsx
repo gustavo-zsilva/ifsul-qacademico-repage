@@ -1,5 +1,10 @@
 import Head from 'next/head';
 
+import Header from './Header';
+
+import GlobalStyle from '../styles/GlobalStyles';
+import { Container } from '../styles/components/HomeLayout';
+
 interface HomeLayoutProps {
     pageTitle: string;
     children: any;
@@ -7,11 +12,17 @@ interface HomeLayoutProps {
 
 const HomeLayout = ({ pageTitle, children }: HomeLayoutProps) => {
     return (
-        <div>
+        <Container>
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-        </div>
+
+            <Header />
+
+            {children}
+
+            <GlobalStyle />
+        </Container>
     )
 }
 

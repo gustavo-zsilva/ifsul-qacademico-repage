@@ -1,9 +1,7 @@
+import { Content } from '../../styles/pages/Home';
 
-import GlobalStyle from '../../styles/GlobalStyles';
-import { Container, Content } from '../../styles/pages/Home';
-
-import Header from '../../components/Header';
 import Card from '../../components/Card';
+import HomeLayout from '../../components/HomeLayout';
 
 interface HomeProps {
     data: Array<CardData>;
@@ -19,13 +17,8 @@ interface CardData {
 const Home = ({ data }: HomeProps) => {
 
     return (
-        <Container>
-            <Header />
-
-            <h3>Home</h3>
-
+        <HomeLayout pageTitle="Q-Acadêmico - Home">
             <Content>
-                
                 {
                     data.map((card, index) => {
                         return(
@@ -42,11 +35,9 @@ const Home = ({ data }: HomeProps) => {
                         )
                     })
                 }
-
             </Content>
-
-            <GlobalStyle />
-        </Container>
+        </HomeLayout>
+            
     );
 }
 

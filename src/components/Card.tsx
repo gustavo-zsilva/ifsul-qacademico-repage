@@ -9,10 +9,10 @@ interface CardProps {
     children: any;
 }
 
-const Card = ({ iconSrc = 'https://www.flaticon.com/svg/static/icons/svg/1940/1940301.svg', title, url, children }: CardProps) => {
+const Card = ({ iconSrc, title, url, children }: CardProps) => {
     
     return (
-        <Link href={url}>
+        <Link href={url} >
               <Container>
                 <div>
                     <Image src={iconSrc} width="50px" height="50px" alt="Card Icon" />

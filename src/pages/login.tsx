@@ -7,11 +7,14 @@ import FormLayout from '../components/FormLayout';
 import Select from 'react-select';
 
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 
 const OptionImage = ({ src }) => <Image src={src} width="30px" height="auto" />;
 
 const Login: React.FC = () => {
+
+    const router = useRouter();
 
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -51,7 +54,7 @@ const Login: React.FC = () => {
         setLogin('');
         setPassword('');
 
-        window.location.href = 'http://localhost:3000/qacademico/home';
+        router.push('/qacademico/home');
     }
 
     useEffect(() => {

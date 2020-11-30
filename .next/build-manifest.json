@@ -24,6 +24,11 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/qacademico/[url]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/qacademico/[url].js"
+    ],
     "/qacademico/home": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
